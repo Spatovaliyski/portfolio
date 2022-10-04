@@ -1,73 +1,88 @@
 var gulp = require('gulp');
 var plumber = require('gulp-plumber');
 var rename = require('gulp-rename');
-var sourcemaps = require('gulp-sourcemaps');
-var sass = require('gulp-sass');
-var autoPrefixer = require('gulp-autoprefixer');
-//if node version is lower than v.0.1.2
-require('es6-promise').polyfill();
-var cssComb = require('gulp-csscomb');
-var cmq = require('gulp-merge-media-queries');
-var cleanCss = require('gulp-clean-css');
-var uglify = require('gulp-uglify');
+var autoprefixer = require('gulp-autoprefixer');
+var babel = require('gulp-babel');
 var concat = require('gulp-concat');
-var notify = require('gulp-notify');
+var uglify = require('gulp-uglify');
+var imagemin = require('gulp-imagemin');
+var cache = require('gulp-cache');
+var minifycss = require('gulp-minify-css');
+var sass = require('gulp-sass');
+var browserSync = require('browser-sync');
+var livereload = require('gulp-livereload');
+var sourcemaps = require("gulp-sourcemaps");
 
-gulp.task('sass',function(){
-	gulp.src(['assets/src/sass/**/*.sass'])
-		.pipe(plumber({
-			handleError: function (err) {
-				console.log(err);
-				this.emit('end');
-			}
-		}))
-		.pipe(sourcemaps.init())
-		.pipe(sass())
-		.pipe(autoPrefixer())
-		.pipe(cssComb())
-		.pipe(cmq({log:true}))
-		.pipe(gulp.dest('assets/dist/css'))
-		.pipe(rename({
-			suffix: '.min'
-		}))
-		.pipe(cleanCss())
-		.pipe(sourcemaps.write())
-		.pipe(gulp.dest('assets/dist/css'))
-		.pipe(notify('css task finished'))
+
+gulp.task('browser-sync', function() {
+  return browserSync({
+    server: {
+       baseDir: "./"
+    }
+  });
 });
 
-gulp.task('js',function(){
-	gulp.src(['assets/src/scripts/**/*.js'])
-		.pipe(plumber({
-			handleError: function (err) {
-				console.log(err);
-				this.emit('end');
-			}
-		}))
-		.pipe(concat('main.js'))
-		.pipe(gulp.dest('assets/dist/scripts'))
-		.pipe(rename({
-			suffix: '.min'
-		}))
-		.pipe(uglify())
-		.pipe(gulp.dest('assets/dist/scripts'))
-		  .pipe(notify('js task finished'))
+gulp.task('bs-reload', function () {
+  browserSync.reload();
 });
 
-gulp.task('html',function(){
-	gulp.src(['html/**/*.html'])
-		.pipe(plumber({
-			handleError: function (err) {
-				console.log(err);
-				this.emit('end');
-			}
-		}))
-		.pipe(gulp.dest('./'))
-		.pipe(notify('html task finished'))
+gulp.task('images', function(){
+  return gulp.src('assets/src/images/**/*')
+    .pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
+    .pipe(gulp.dest('assets/dist/images/'));
 });
 
-gulp.task('default',function(){
-	gulp.watch('assets/src/scripts/**/*.js',['js']);
-	gulp.watch('assets/src/sass/**/*.sass',['sass']);
-	gulp.watch('html/**/*.html',['html']);
+gulp.task('styles', function(){
+  return gulp.src('assets/src/styles/**/*.scss')
+    .pipe(plumber({
+      errorHandler: function (error) {
+        console.log(error.message);
+        this.emit('end');
+    }}))
+    .pipe(sass())
+    .pipe(autoprefixer('last 2 versions'))
+    .pipe(gulp.dest('assets/dist/styles/'))
+    .pipe(rename({suffix: '.min'}))
+    .pipe(minifycss())
+    .pipe(gulp.dest('assets/dist/styles/'))
+    .pipe(browserSync.reload({stream:true}))
 });
+
+gulp.task("cssmin", function() {
+  return gulp.src('assets/dist/styles/' + "master.css")
+  .pipe(sourcemaps.init({ loadMaps: true }))
+  .pipe(rename({ suffix: ".min" }))
+  .pipe(sourcemaps.write('./'))
+  .pipe(gulp.dest('assets/dist/styles'))
+});
+
+gulp.task('scripts', function(){
+  return gulp.src('assets/src/scripts/**/*.js')
+    .pipe(plumber({
+      errorHandler: function (error) {
+        console.log(error.message);
+        this.emit('end');
+    }}))
+    .pipe(concat('main.js'))
+    .pipe(babel())
+    .pipe(gulp.dest('assets/dist/scripts/'))
+    .pipe(rename({suffix: '.min'}))
+    .pipe(uglify())
+    .pipe(gulp.dest('assets/dist/scripts/'))
+    .pipe(browserSync.reload({stream:true}))
+});
+
+gulp.task("watch", function() {
+  livereload.listen();
+
+  gulp.watch('assets/src/styles/**/*.scss', gulp.series("styles"));
+  gulp.watch('assets/src/scripts/**/*.js', gulp.series("scripts"));
+  gulp.watch('assets/src/images/*', gulp.series("images"));
+
+  gulp.watch('assets/dist/styles/' + "master.css", gulp.series("cssmin"));
+
+});
+
+gulp.task("default", 
+  gulp.series("styles", gulp.parallel("scripts"), "watch")
+);

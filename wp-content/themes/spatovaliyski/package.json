@@ -1,24 +1,34 @@
 {
-    "name": "Spatovaliyski Theme Gulpfile",
-    "version": "1.0.0",
-    "description": "My own theme's package.json",
-    "author": "Martin Spatovaliyski",
-    "url": "/",
-    "license": "MIT License",
-    "keywords": "gulp",
-    "devDependencies": {
-        "gulp": "*",
-        "gulp-plumber": "*",
-        "gulp-rename": "*",
-        "gulp-sourcemaps": "*",
-        "gulp-sass": "*",
-        "gulp-autoprefixer": "*",
-        "es6-promise": "*",
-        "gulp-csscomb": "*",
-        "gulp-merge-media-queries": "*",
-        "gulp-clean-css": "*",
-        "gulp-uglify": "*",
-        "gulp-concat": "*",
-        "gulp-notify": "*"
-    }
+  "name": "Martin",
+  "version": "1.0.0",
+  "description": "Theme for my website",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gulp": "./node_modules/.bin/gulp"
+  },
+  "author": "Martin Spatovaliyski",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "babel-preset-env": "^1.7.0",
+    "browser-sync": "2.26.7",
+    "gulp": "4.0.2",
+    "gulp-autoprefixer": "7.0.0",
+    "gulp-babel": "8.0.0",
+    "gulp-cache": "1.1.3",
+    "gulp-concat": "2.6.1",
+    "gulp-imagemin": "6.1.0",
+    "gulp-livereload": "^4.0.1",
+    "gulp-minify-css": "1.2.4",
+    "gulp-plumber": "1.2.1",
+    "gulp-rename": "1.4.0",
+    "gulp-sass": "4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglify": "3.0.2",
+    "livereload": "^0.8.0"
+  },
+  "dependencies": {}
 }
