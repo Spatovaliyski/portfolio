@@ -27,7 +27,7 @@
 
 	&-projects {
 		width: 100%;
-		padding: 6em 2em;
+		padding: 8em 2em;
 
 		.headline-catch {
 			margin-left: 0;
@@ -46,6 +46,7 @@
 	&-contact {
 		width: 100%;
 		padding: 6em 2em;
+		background: lighten($color-body, 2);
 
 		.copy {
 			max-width: 30em;

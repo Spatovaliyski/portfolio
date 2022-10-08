@@ -2,19 +2,131 @@
 	&-tabs {
 		max-width: 75em;
 		margin: 0 auto;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+
+		&:before,
+		&:after {
+			content: '';
+			flex-basis: calc(100% / 3 - 1em);
+			order: 99;
+		}
 	}
 
+	// Portfolio Item styling. Set as 3 items per row with small offset
 	&-item {
+		position: relative;
 		display: flex;
+		flex-wrap: wrap;
+		flex-flow: column;
+		flex-basis: calc(100% / 3 - 1em);
+
+		border-radius: 6px;
 		margin-bottom: 4em;
 		margin-top: 4em;
+		background: #1b1b24;
+
+		&:hover {
+			.portfolio-thumbnail img {
+				transform: scale(1.7) rotate(-8deg);
+				opacity: .3;
+			}
+		}
 	}
 
+
+	// This is the information panel (Title+Description)
 	&-item-info {
-		backdrop-filter: blur(1em);
-		background: #1b1b24;
+		backdrop-filter: blur(.25em);
 		border-radius: 6px;
 		padding: 2.5em;
-		flex: 0 0 calc(100% / 2.5);
+		z-index: 1;
+		border-radius: 6px;
+		overflow: hidden;
+	}
+
+	&-description {
+		color: #b7b7b7;
+	}
+ 
+	// Item clickable link - perferably to source code (should be placed inside the title)
+	&-item-link {
+		text-decoration: none;
+		color: white;
+	}
+
+	// Item title
+	&-title {
+		margin-top: 0;
+	}
+
+	// Overflowed image
+	&-thumbnail {
+		display: block;
+		overflow: hidden;
+
+		img {
+			width: 100%;
+			transform: scale(1.5) rotate(-10deg);
+			transition: .3s $transition-smooth all;
+			transform-origin: top center;
+			opacity: .2;
+		}
+	}
+
+	// Lower meta information (Links & Teach stack)
+	&-meta {
+		display: flex;
+		margin-top: auto;
+	}
+
+	// Social icons in the bottom
+	&-source-links {
+		flex: 1;
+		text-align: right;
+		padding-right: 2em;
+		padding-left: 1em;
+		margin-left: 0;
+
+		display: flex;
+		align-items: flex-end;
+		justify-content: flex-end;
+
+		li {
+			display: inline-block;
+			width: 1.5em;
+			margin-left: .5em;
+		}
+
+		a svg {
+			color: #FFF;
+			transition: .2s $transition-smooth;
+
+			&:hover {
+				color: $color-toxic;
+			}
+		}
+	}
+
+	// Used resources list
+	&-stack-list {
+		flex: 1 1 calc(100% - 12em);
+		list-style: none;
+		display: block;
+		padding-left: 2.5em;
+		margin-left: 0;
+		color: #FFF;
+
+		li {
+			display: inline-block;
+			font-size: .85em;
+			opacity: .55;
+			margin-right: .25rem;
+
+			&:not(:last-child):after {
+				content: ','
+			}
+		}
 	}
 }

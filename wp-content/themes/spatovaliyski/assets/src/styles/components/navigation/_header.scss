@@ -1,4 +1,5 @@
 .site-header {
+	z-index: 99;
 	backdrop-filter: blur(20px);
 	width: calc(100% - 2em);
 	position: fixed;

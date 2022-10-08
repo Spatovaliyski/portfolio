@@ -3,7 +3,7 @@ a {
 	transition: .2s $transition-smooth;
 
 	&:visited {
-		color: $color__link-visited;
+		color: inherit;
 	}
 
 	&:hover,

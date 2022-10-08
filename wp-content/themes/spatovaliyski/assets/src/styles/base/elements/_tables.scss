@@ -5,7 +5,7 @@ table {
 
 .skills-table {
 	h3 > span {
-		color: #623f84;
+		color: #7749a4;
 	}
 }
 
@@ -22,20 +22,20 @@ table {
 		margin-right: 1em;
 		margin-bottom: 1em;
 		padding: .25em .5em;
+		list-style: none;
 		
 		border: 1px solid rgba(#FFF, .09);
 		border-radius: 4px;
+		color: #b4b4b4;
 		
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		text-align: center;
-
-		list-style: none;
-
 		font-size: .85em;
 
 		&.highlight {
+			color: #FFF;
 			border-color: #7749a4;
 		}
 	}
