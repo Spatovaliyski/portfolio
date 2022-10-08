@@ -14,7 +14,7 @@ get_header();
 				<div class="headline">
 					<p class="headline-catch">Let's keep it simple</p>
 					<h1 class="headline-title headline-scaled">Heya,<br><span>I'm</span>&nbsp;Martin Spatovaliyski</h1>
-					<h3 class="headline-subtitle">web developer / WordPress enthusiast</h3>
+					<h3 class="headline-subtitle">web developer / WordPress enthusiast, Core contributor</h3>
 				</div>
 
 				<div class="copy">
@@ -48,16 +48,16 @@ get_header();
 						<li class="skill highlight">SCSS/CSS</li>
 						<li class="skill highlight">Git</li>
 						<li class="skill highlight">jQuery</li>
-						<li class="skill">PHP</li>
 						<li class="skill highlight">JSON</li>
 						<li class="skill highlight">Ajax</li>
 						<li class="skill highlight">ACF</li>
 						<li class="skill highlight">WordPress</li>
-						<li class="skill">Foundation 5</li>
 						<li class="skill highlight">Gulp</li>
-						<li class="skill">LAMP</li>
-						<li class="skill">E2E Development</li>
-						<li class="skill">Project Leadership</li>
+						<li class="skill highlight">Foundation 5</li>
+						<li class="skill highlight">PHP</li>
+						<li class="skill highlight">LAMP</li>
+						<li class="skill highlight">E2E Development</li>
+						<li class="skill highlight">Project Leadership</li>
 					</ul>
 
 					<h3>What I've picked from time to time (on a need basis)</h3>
@@ -101,7 +101,7 @@ get_header();
 						</picture>
 
 						<div class="portfolio-item-info">
-							<h2 class="portfolio-title"><a target=_blank href="https://github.com/Spatovaliyski/portfolio" class="portfolio-item-link">CILECT</a></h2>
+							<h2 class="portfolio-title"><a target=_blank href="https://cilect.org" class="portfolio-item-link">CILECT</a></h2>
 							<div class="portfolio-description">
 								<p>Ongoing</p>
 								<p>This is a project I'm currently working on. It involves a full website redesign, rework, database rework and funcionality upgrade from its old 2006-2021 version. <br>There is <b>no</b> source code.</p>

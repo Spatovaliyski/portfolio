@@ -136,3 +136,35 @@
 		flex: 1 0 50%;
 	}
 }
+
+.menu-item {
+	&.icon {
+		display: inline-block;
+		width: 1em;
+		color: white;
+		line-height: 1;
+
+		&:hover {
+			color: $color-toxic;
+		}
+
+		&.icon-linkedin {
+
+		}
+	}
+
+	&.spacer {
+		margin-left: 2.5em;
+		position: relative;
+
+		&:before {
+			content: '';
+			position: absolute;
+			left: -2em;
+			top: 0;
+			height: 100%;
+			width: 1px;
+			background-color: rgba(white, .1);
+		}
+	}
+}

@@ -2,3 +2,13 @@ body {
 	background: $color-body;
 	color: $color-primary;
 }
+
+::-moz-selection {
+	color: #000;
+	background: $color-toxic;
+}
+  
+::selection {
+	color: #000;
+	background: $color-toxic;
+}

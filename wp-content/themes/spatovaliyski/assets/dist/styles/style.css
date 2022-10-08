@@ -434,6 +434,14 @@ body {
   background: #16161d;
   color: #FAFAFA; }
 
+::-moz-selection {
+  color: #000;
+  background: #3ade5f; }
+
+::selection {
+  color: #000;
+  background: #3ade5f; }
+
 hr {
   background-color: #ccc;
   border: 0;
@@ -923,6 +931,26 @@ textarea {
       -ms-flex: 1 0 50%;
           flex: 1 0 50%; }
 
+.menu-item.icon {
+  display: inline-block;
+  width: 1em;
+  color: white;
+  line-height: 1; }
+  .menu-item.icon:hover {
+    color: #3ade5f; }
+
+.menu-item.spacer {
+  margin-left: 2.5em;
+  position: relative; }
+  .menu-item.spacer:before {
+    content: '';
+    position: absolute;
+    left: -2em;
+    top: 0;
+    height: 100%;
+    width: 1px;
+    background-color: rgba(255, 255, 255, 0.1); }
+
 .site-header {
   z-index: 99;
   -webkit-backdrop-filter: blur(20px);
@@ -1000,7 +1028,8 @@ textarea {
 .site-footer {
   padding: 3em 0;
   margin-top: 3em;
-  border-top: 1px solid #2c2c3a; }
+  border-top: 1px solid #2c2c3a;
+  text-align: center; }
 
 .site-info {
   max-width: 95em;
