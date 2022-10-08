@@ -1,0 +1,14 @@
+.error-404 {
+	min-height: 60vh;   
+	display: flex;
+	justify-content: center;
+	flex-flow: column;
+
+	.page-title {
+		margin: 0;
+	}
+
+	.page-content {
+		margin-top: 0;
+	}
+}

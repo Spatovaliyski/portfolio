@@ -1,7 +1,10 @@
 jQuery(document).ready(function ($) {
   "use strict";
 
-  $('body').addClass("loaded");
+  $('body').addClass("loaded, load-reveal");
+  setTimeout(() => {
+    $('body').removeClass('load-reveal');
+  }, 1000);
   /**
    * HEADROOM INIT
    */
@@ -28,7 +31,7 @@ jQuery(document).ready(function ($) {
    * Handle the menu switching animation (section scroll to) with timeouts
    */
 
-  $('.menu-item:not("icon"):not("cv")').click(function (e) {
+  $('.menu-item:not(".redirect")').click(function (e) {
     e.preventDefault();
 
     if ($('body').hasClass('is-animation-ongoing')) {

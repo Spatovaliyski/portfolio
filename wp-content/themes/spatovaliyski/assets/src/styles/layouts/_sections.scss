@@ -3,6 +3,10 @@
 	margin: 0 auto;
 	transition: .6s $transition-smooth;
 
+	&.site-main {
+		margin-top: 12em;
+	}
+
 	&-homepage {
 		.section {
 
@@ -20,11 +24,11 @@
 	padding: 0 2em;
 
 	&.hide-section {
-		animation: fadeUp 0.7s $transition-reveal forwards;
+		animation: fadeUp 0.7s $transition-reveal forwards !important;
 	}
 
 	&.show-section {
-		animation: revealUp 0.7s $transition-reveal forwards;
+		animation: revealUp 0.7s $transition-reveal forwards !important;
 	}
 
 

@@ -1,6 +1,12 @@
 body {
 	background: $color-body;
 	color: $color-primary;
+
+	&.load-reveal {
+		.section {
+			animation: loadSite 0.7s $transition-reveal forwards;
+		}
+	}
 }
 
 ::-moz-selection {

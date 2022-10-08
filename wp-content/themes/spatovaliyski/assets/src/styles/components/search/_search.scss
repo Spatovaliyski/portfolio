@@ -1,0 +1,17 @@
+.search {
+	.section-main {
+		article {
+			padding: 2rem;
+			
+			background: lighten($color-body, 1);
+
+			&:nth-child(2n+1) {
+				background: lighten($color-body, 2); 
+			}
+		}
+	}
+
+	.entry-title {
+		margin-top: 0;
+	}
+}

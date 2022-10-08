@@ -91,44 +91,6 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 #primary[tabindex="-1"]:focus {
   outline: 0; }
 
-.animation-reveal {
-  position: relative; }
-  .animation-reveal:before {
-    content: '';
-    position: absolute;
-    width: 0%;
-    height: 100%;
-    background-color: #000; }
-  .loaded .animation-reveal:before {
-    -webkit-animation: revealComponent 1s forwards;
-            animation: revealComponent 1s forwards; }
-
-@-webkit-keyframes revealComponent {
-  0% {
-    opacity: 0;
-    width: 0%;
-    pointer-events: all; }
-  95% {
-    opacity: 1;
-    width: 100%;
-    pointer-events: all; }
-  100% {
-    opacity: 0;
-    pointer-events: none; } }
-
-@keyframes revealComponent {
-  0% {
-    opacity: 0;
-    width: 0%;
-    pointer-events: all; }
-  95% {
-    opacity: 1;
-    width: 100%;
-    pointer-events: all; }
-  100% {
-    opacity: 0;
-    pointer-events: none; } }
-
 @-webkit-keyframes fadeUp {
   from {
     opacity: 1;
@@ -160,6 +122,26 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
             transform: translateY(0); } }
 
 @keyframes revealUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(2.2em);
+            transform: translateY(2.2em); }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0); } }
+
+@-webkit-keyframes loadSite {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(2.2em);
+            transform: translateY(2.2em); }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0); } }
+
+@keyframes loadSite {
   from {
     opacity: 0;
     -webkit-transform: translateY(2.2em);
@@ -535,7 +517,7 @@ var {
 
 abbr,
 acronym {
-  border-bottom: 1px dotted #666;
+  border-bottom: 1px dotted #000;
   cursor: help; }
 
 mark,
@@ -551,6 +533,9 @@ big {
 body {
   background: #16161d;
   color: #FAFAFA; }
+  body.load-reveal .section {
+    -webkit-animation: loadSite 0.7s cubic-bezier(0.3, 0, 0.13, 0.72) forwards;
+            animation: loadSite 0.7s cubic-bezier(0.3, 0, 0.13, 0.72) forwards; }
 
 ::-moz-selection {
   color: #000;
@@ -768,6 +753,23 @@ table {
     .portfolio-stack-list li:not(:last-child):after {
       content: ','; }
 
+.error-404 {
+  min-height: 60vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column; }
+  .error-404 .page-title {
+    margin: 0; }
+  .error-404 .page-content {
+    margin-top: 0; }
+
 /* Links
 --------------------------------------------- */
 a {
@@ -779,7 +781,7 @@ a {
   a:hover, a:focus, a:active {
     color: #58ff7e; }
   a:focus {
-    outline: thin dotted; }
+    outline: none; }
   a:hover, a:active {
     outline: 0; }
 
@@ -793,17 +795,19 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"] {
   border: 1px solid;
-  border-color: #ccc #ccc #bbb;
   border-radius: 3px;
-  background: #e6e6e6;
-  color: rgba(0, 0, 0, 0.8);
+  border-color: #121217;
+  background-color: #121217;
+  color: #FAFAFA;
   line-height: 1;
-  padding: 0.6em 1em 0.4em; }
+  padding: .7em 1em; }
   button:hover,
   input[type="button"]:hover,
   input[type="reset"]:hover,
   input[type="submit"]:hover {
-    border-color: #ccc #bbb #aaa; }
+    border-color: #121217;
+    background-color: #14141a;
+    cursor: pointer; }
   button:active, button:focus,
   input[type="button"]:active,
   input[type="button"]:focus,
@@ -839,10 +843,12 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
 textarea {
-  color: #666;
-  border: 1px solid #ccc;
+  color: #FFF;
+  border: 1px solid #16161d;
   border-radius: 3px;
-  padding: 3px; }
+  padding: 3px;
+  background-color: #121217;
+  padding: .5em .75em; }
   input[type="text"]:focus,
   input[type="email"]:focus,
   input[type="url"]:focus,
@@ -859,10 +865,12 @@ textarea {
   input[type="datetime-local"]:focus,
   input[type="color"]:focus,
   textarea:focus {
-    color: #111; }
+    color: #FFF;
+    outline: none;
+    border-color: #3ade5f; }
 
 select {
-  border: 1px solid #ccc; }
+  border: 1px solid #16161d; }
 
 textarea {
   width: 100%; }
@@ -875,6 +883,8 @@ textarea {
   margin: 0 auto;
   -webkit-transition: 0.6s cubic-bezier(0.42, 0.47, 0, 0.87);
   transition: 0.6s cubic-bezier(0.42, 0.47, 0, 0.87); }
+  .sections.site-main {
+    margin-top: 12em; }
   .sections.switching {
     -webkit-transform: translateY(-3em);
             transform: translateY(-3em);
@@ -883,11 +893,11 @@ textarea {
 .section {
   padding: 0 2em; }
   .section.hide-section {
-    -webkit-animation: fadeUp 0.7s cubic-bezier(0.3, 0, 0.7, 0) forwards;
-            animation: fadeUp 0.7s cubic-bezier(0.3, 0, 0.7, 0) forwards; }
+    -webkit-animation: fadeUp 0.7s cubic-bezier(0.3, 0, 0.13, 0.72) forwards !important;
+            animation: fadeUp 0.7s cubic-bezier(0.3, 0, 0.13, 0.72) forwards !important; }
   .section.show-section {
-    -webkit-animation: revealUp 0.7s cubic-bezier(0.3, 0, 0.7, 0) forwards;
-            animation: revealUp 0.7s cubic-bezier(0.3, 0, 0.7, 0) forwards; }
+    -webkit-animation: revealUp 0.7s cubic-bezier(0.3, 0, 0.13, 0.72) forwards !important;
+            animation: revealUp 0.7s cubic-bezier(0.3, 0, 0.13, 0.72) forwards !important; }
   .section-welcome svg {
     width: 100%; }
   .section-welcome .section-aside {
@@ -1255,6 +1265,17 @@ textarea {
 
 .gallery-caption {
   display: block; }
+
+/* Search 
+--------------------------------------------- */
+.search .section-main article {
+  padding: 2rem;
+  background: #181820; }
+  .search .section-main article:nth-child(2n+1) {
+    background: #1a1a23; }
+
+.search .entry-title {
+  margin-top: 0; }
 
 /*--------------------------------------------------------------
 # Plugins
