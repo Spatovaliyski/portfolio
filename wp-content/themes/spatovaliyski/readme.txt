@@ -26,8 +26,6 @@ Description
 
 = Does this theme support any plugins? =
 
-spatovaliyski includes support for WooCommerce and for Infinite Scroll in Jetpack.
-
 == Changelog ==
 
 = 1.0 - May 12 2015 =

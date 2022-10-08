@@ -6,3 +6,21 @@ h5,
 h6 {
 	clear: both;
 }
+
+.headline {
+	&-title {
+		line-height: 1.3;
+	}
+
+	&-scaled {
+		font-size: 3.5em;
+		margin: 0;
+	}
+
+	&-catch {
+		color: lighten($color-toxic, 90);
+		font-size: .9em;
+		margin-left: 4px;
+		margin-bottom: 0;
+	}
+}

@@ -1,6 +1,5 @@
 .main-navigation {
 	display: block;
-	width: 100%;
 
 	ul {
 		display: none;
@@ -51,6 +50,11 @@
 
 	li {
 		position: relative;
+		margin-right: 1.5em;
+
+		&:last-child {
+			margin-right: 0;
+		}
 
 		&:hover > a,
 		&.focus > a {
@@ -58,8 +62,28 @@
 	}
 
 	a {
+		color: #FFF;
 		display: block;
 		text-decoration: none;
+		
+		&:hover {
+			color: $color__link-hover;
+		}
+	}
+
+	li.cv {
+		border: 1px solid $color-toxic;
+		border-radius: 4px;
+		transition: .2s $transition-smooth;
+
+		&:hover {
+			background-color: rgba($color-toxic, .05);
+		}
+
+		a {
+			padding: .5em 1em;
+			display: block;
+		}
 	}
 
 	.current_page_item > a,
@@ -84,6 +108,11 @@
 	.main-navigation ul {
 		display: flex;
 	}
+}
+
+.nav-menu {
+	display: flex;
+	align-items: center;
 }
 
 .comment-navigation,

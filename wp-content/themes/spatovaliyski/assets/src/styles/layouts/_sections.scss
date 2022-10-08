@@ -1,0 +1,38 @@
+.sections {
+	max-width: 100em;
+	margin: 0 auto;
+
+	&-homepage {
+		.section {
+
+		}
+	}
+}
+
+.section {
+	padding: 0 2em;
+
+	&-container {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-between;
+	}
+
+	&-aside {
+		flex-basis: 680px;
+	}
+
+	&-welcome {
+		min-height: 100vh;
+		display: flex;
+		align-items: center;	
+	}
+
+	&-title {
+		max-width: 42em;
+
+		span {
+			color: $color-toxic
+		}
+	}
+}

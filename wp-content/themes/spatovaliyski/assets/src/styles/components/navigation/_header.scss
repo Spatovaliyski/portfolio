@@ -1,0 +1,52 @@
+.site-header {
+	background: rgba(lighten($color-body, 3), .98);
+	backdrop-filter: blur(6px);
+	
+	width: calc(100% - 2em);
+	position: fixed;
+	top: 1em;
+	left: 1em;
+	border-radius: 6px;
+	
+	padding: 1.75em 1.5em;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.site-title {
+	a {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		font-size: 1.75em;
+		text-decoration: none;
+		color: $color-toxic;
+		width: 6em;
+		line-height: .75;
+		font-weight: 600;
+		text-indent: 1rem;
+		margin-top: -.25rem;
+
+		&:before {
+			content: '';
+			width: 0;
+			height: 3px;
+			background: white;
+			position: absolute;
+			bottom: -12px;
+			left: 0;
+			z-index: -1;
+			transition: .3s $transition-smooth;
+		}
+
+		&:hover {
+			color: $color-toxic;
+
+			&:before {
+				width: 100%;
+			}
+		}
+	}
+}
