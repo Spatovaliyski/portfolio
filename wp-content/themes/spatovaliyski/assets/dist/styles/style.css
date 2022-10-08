@@ -51,6 +51,124 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 # Generic
 --------------------------------------------------------------*/
+/* Accessibility
+--------------------------------------------- */
+/* Text meant only for screen readers. */
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important; }
+  .screen-reader-text:focus {
+    background-color: #f1f1f1;
+    border-radius: 3px;
+    -webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+    clip: auto !important;
+    -webkit-clip-path: none;
+            clip-path: none;
+    color: #21759b;
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 700;
+    height: auto;
+    left: 5px;
+    line-height: normal;
+    padding: 15px 23px 14px;
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+    z-index: 100000; }
+
+/* Do not show the outline on the skip link target. */
+#primary[tabindex="-1"]:focus {
+  outline: 0; }
+
+.animation-reveal {
+  position: relative; }
+  .animation-reveal:before {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    background-color: #000; }
+  .loaded .animation-reveal:before {
+    -webkit-animation: revealComponent 1s forwards;
+            animation: revealComponent 1s forwards; }
+
+@-webkit-keyframes revealComponent {
+  0% {
+    opacity: 0;
+    width: 0%;
+    pointer-events: all; }
+  95% {
+    opacity: 1;
+    width: 100%;
+    pointer-events: all; }
+  100% {
+    opacity: 0;
+    pointer-events: none; } }
+
+@keyframes revealComponent {
+  0% {
+    opacity: 0;
+    width: 0%;
+    pointer-events: all; }
+  95% {
+    opacity: 1;
+    width: 100%;
+    pointer-events: all; }
+  100% {
+    opacity: 0;
+    pointer-events: none; } }
+
+@-webkit-keyframes fadeUp {
+  from {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0); }
+  to {
+    opacity: 0;
+    -webkit-transform: translateY(-2.2em);
+            transform: translateY(-2.2em); } }
+
+@keyframes fadeUp {
+  from {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0); }
+  to {
+    opacity: 0;
+    -webkit-transform: translateY(-2.2em);
+            transform: translateY(-2.2em); } }
+
+@-webkit-keyframes revealUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(2.2em);
+            transform: translateY(2.2em); }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0); } }
+
+@keyframes revealUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(2.2em);
+            transform: translateY(2.2em); }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0); } }
+
 /* Normalize
 --------------------------------------------- */
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
@@ -764,6 +882,24 @@ textarea {
 
 .section {
   padding: 0 2em; }
+  .section.hide-section {
+    -webkit-animation: fadeUp 0.7s cubic-bezier(0.3, 0, 0.7, 0) forwards;
+            animation: fadeUp 0.7s cubic-bezier(0.3, 0, 0.7, 0) forwards; }
+  .section.show-section {
+    -webkit-animation: revealUp 0.7s cubic-bezier(0.3, 0, 0.7, 0) forwards;
+            animation: revealUp 0.7s cubic-bezier(0.3, 0, 0.7, 0) forwards; }
+  .section-welcome svg {
+    width: 100%; }
+  .section-welcome .section-aside {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1; }
+  .section-welcome .section-container {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+  .section-experience {
+    padding: 5em 2em; }
   .section-container {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -777,7 +913,7 @@ textarea {
             justify-content: space-between; }
   .section-projects {
     width: 100%;
-    padding: 8em 2em; }
+    padding: 5em 2em; }
     .section-projects .headline-catch {
       margin-left: 0; }
     .section-projects .section-container {
@@ -786,9 +922,10 @@ textarea {
       max-width: 100%;
       text-align: center; }
   .section-contact {
-    width: 100%;
-    padding: 6em 2em;
-    background: #1a1a23; }
+    width: 100%; }
+    .section-contact .section-container {
+      padding: 6em 2em;
+      background: #1a1a23; }
     .section-contact .copy {
       max-width: 30em;
       margin: 0 auto; }
@@ -817,7 +954,7 @@ textarea {
     -ms-flex-preferred-size: 680px;
         flex-basis: 680px; }
   .section-welcome {
-    min-height: 100vh;
+    min-height: 90vh;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1136,46 +1273,6 @@ textarea {
 /*--------------------------------------------------------------
 # Utilities
 --------------------------------------------------------------*/
-/* Accessibility
---------------------------------------------- */
-/* Text meant only for screen readers. */
-.screen-reader-text {
-  border: 0;
-  clip: rect(1px, 1px, 1px, 1px);
-  -webkit-clip-path: inset(50%);
-          clip-path: inset(50%);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute !important;
-  width: 1px;
-  word-wrap: normal !important; }
-  .screen-reader-text:focus {
-    background-color: #f1f1f1;
-    border-radius: 3px;
-    -webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-            box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-    clip: auto !important;
-    -webkit-clip-path: none;
-            clip-path: none;
-    color: #21759b;
-    display: block;
-    font-size: 0.875rem;
-    font-weight: 700;
-    height: auto;
-    left: 5px;
-    line-height: normal;
-    padding: 15px 23px 14px;
-    text-decoration: none;
-    top: 5px;
-    width: auto;
-    z-index: 100000; }
-
-/* Do not show the outline on the skip link target. */
-#primary[tabindex="-1"]:focus {
-  outline: 0; }
-
 /* Alignments
 --------------------------------------------- */
 .alignleft {

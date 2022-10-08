@@ -57,6 +57,12 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Generic
 --------------------------------------------------------------*/
 
+/* Accessibility
+--------------------------------------------- */
+@import "utilities/accessibility";
+@import "utilities/animations";
+
+
 /* Normalize
 --------------------------------------------- */
 @import "generic/normalize";
@@ -94,9 +100,6 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Utilities
 --------------------------------------------------------------*/
 
-/* Accessibility
---------------------------------------------- */
-@import "utilities/accessibility";
 
 /* Alignments
 --------------------------------------------- */

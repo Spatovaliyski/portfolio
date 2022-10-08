@@ -14,13 +14,17 @@ get_header();
 				<div class="headline">
 					<p class="headline-catch">Let's keep it simple</p>
 					<h1 class="headline-title headline-scaled">Heya,<br><span>I'm</span>&nbsp;Martin Spatovaliyski</h1>
-					<h3 class="headline-subtitle">web developer / WordPress enthusiast, Core contributor</h3>
+					<h3 class="headline-subtitle">web developer / WordPress enthusiast, core contributor</h3>
 				</div>
 
-				<div class="copy">
+				<div class="copy animation-reveal">
 					<p>I'm a Front-end developer who does theme building, plugin development, end-to-end website development with and without WordPress for just over 5 years. <a href="#">I'm looking for a job!</a></p>
 				</div>
 			</div>
+
+			<aside class="section-aside">
+				<svg id="visual" viewBox="0 0 900 600" width="900" height="600" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><rect x="0" y="0" width="900" height="600" fill="#16161d"></rect><g transform="translate(460.31834684697725 305.99920918265997)"><path d="M90.7 -165.1C117.8 -141.5 140.1 -117.6 162.5 -90.1C184.9 -62.5 207.5 -31.3 215.3 4.5C223.2 40.3 216.4 80.7 194.1 108.4C171.7 136.1 133.9 151.2 98.9 169C64 186.9 32 207.4 -7.3 220.1C-46.7 232.8 -93.3 237.7 -125.7 218.3C-158 199 -176 155.5 -196.2 115.1C-216.3 74.7 -238.7 37.3 -239.1 -0.2C-239.5 -37.8 -218.1 -75.7 -199.6 -119C-181.1 -162.3 -165.5 -211 -132.8 -231.3C-100 -251.5 -50 -243.3 -9.1 -227.5C31.8 -211.8 63.7 -188.6 90.7 -165.1" fill="#1b1b24"></path></g></svg>
+			</aside>
 		</div>
 	</section>
 
@@ -51,11 +55,11 @@ get_header();
 						<li class="skill highlight">JSON</li>
 						<li class="skill highlight">Ajax</li>
 						<li class="skill highlight">ACF</li>
-						<li class="skill highlight">WordPress</li>
 						<li class="skill highlight">Gulp</li>
-						<li class="skill highlight">Foundation 5</li>
 						<li class="skill highlight">PHP</li>
 						<li class="skill highlight">LAMP</li>
+						<li class="skill highlight">WordPress</li>
+						<li class="skill highlight">Foundation 5</li>
 						<li class="skill highlight">E2E Development</li>
 						<li class="skill highlight">Project Leadership</li>
 					</ul>
@@ -68,7 +72,8 @@ get_header();
 						<li class="skill">XML</li>
 						<li class="skill">WooCommerce</li>
 						<li class="skill">DB management</li>
-						
+						<li class="skill">Figma</li>
+						<li class="skill">Adobe Suite</li>
 					</ul>
 
 					<h3>I've dabbled with (&nbsp;<span>and wish to expand!</span>&nbsp;)</h3>
