@@ -57,7 +57,11 @@ jQuery(document).ready(function ($) {
       $('body').removeClass('is-animation-ongoing');
       clearState();
     }, 2000);
-  });
+  }); // Simple check: if we aren't on the homepage, we remove the nav direction buttons
+
+  if (!$('body').hasClass('page-template-template-homepage')) {
+    $('.home-tab').remove();
+  }
 });
 /*!
  * headroom.js v0.12.0 - Give your page some headroom. Hide your header until you need it

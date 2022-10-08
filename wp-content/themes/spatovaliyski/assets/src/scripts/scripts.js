@@ -64,4 +64,9 @@ jQuery( document ).ready(function($) {
 			clearState();
 		}, 2000);
 	});
+
+	// Simple check: if we aren't on the homepage, we remove the nav direction buttons
+	if (! $('body').hasClass('page-template-template-homepage')) {
+		$('.home-tab').remove();
+	}
 });
