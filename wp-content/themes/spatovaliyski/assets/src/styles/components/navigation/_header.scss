@@ -1,7 +1,5 @@
 .site-header {
-	background: rgba(lighten($color-body, 3), .98);
-	backdrop-filter: blur(6px);
-	
+	backdrop-filter: blur(20px);
 	width: calc(100% - 2em);
 	position: fixed;
 	top: 1em;
@@ -13,6 +11,18 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+
+	transition: .3s $transition-smooth background-color, 0s ease backdrop-filter;
+
+	&.headroom {
+		&--top {
+			background: none;
+		}
+
+		&--not-top {
+			background: rgba(lighten($color-body, 3), .8);
+		}
+	}
 }
 
 .site-title {
@@ -22,7 +32,7 @@
 		transform: translateY(-50%);
 		font-size: 1.75em;
 		text-decoration: none;
-		color: $color-toxic;
+		color: #FFF;
 		width: 6em;
 		line-height: .75;
 		font-weight: 600;

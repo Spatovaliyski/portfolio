@@ -19,10 +19,10 @@
 				printf( esc_html__( 'Proudly powered by %s', 'spatovaliyski' ), 'WordPress' );
 				?>
 			</a>
-			<span class="sep"> | </span>
+			<span class="sep">&nbsp; | &nbsp; </span>
 				<?php
 				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'spatovaliyski' ), 'spatovaliyski', '<a href="http://martinsp.com">Martin Spatovaliyski</a>' );
+				printf( esc_html__( '&copy; '. date("Y") .' spatovaliyski.com by %2$s.', 'spatovaliyski' ), 'spatovaliyski', '<a href="https://github.com/Spatovaliyski/portfolio" target=_blank>Martin Spatovaliyski</a>' );
 				?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->

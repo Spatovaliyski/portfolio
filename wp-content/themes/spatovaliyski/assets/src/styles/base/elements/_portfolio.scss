@@ -1,0 +1,20 @@
+.portfolio {
+	&-tabs {
+		max-width: 75em;
+		margin: 0 auto;
+	}
+
+	&-item {
+		display: flex;
+		margin-bottom: 4em;
+		margin-top: 4em;
+	}
+
+	&-item-info {
+		backdrop-filter: blur(1em);
+		background: #1b1b24;
+		border-radius: 6px;
+		padding: 2.5em;
+		flex: 0 0 calc(100% / 2.5);
+	}
+}

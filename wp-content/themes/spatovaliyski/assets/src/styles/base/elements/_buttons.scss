@@ -19,3 +19,18 @@ input[type="submit"] {
 		border-color: $color__border-button-focus;
 	}
 }
+
+.button {
+	&-primary {
+		background-color: transparent;
+		border: 1px solid $color-toxic;
+		border-radius: 4px;
+		color: #FFF;
+		padding: 1em 1.25em;
+		text-decoration: none;
+	
+		&:hover {
+			background-color: rgba($color-toxic, .05);
+		}
+	}
+}

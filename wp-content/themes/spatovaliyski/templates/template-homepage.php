@@ -34,9 +34,9 @@ get_header();
 
 				<div class="copy">
 					<p>My passion for the web dates back from the very early days of WYSIWYG Web builder. That dates all the way back to around 2007-2008, where I started my very first inspirations for what the "FUTURE OF THE WEB" could be.</p>
-					<p>Obviously that didn't go full-circle, as later on I picked up HTML and CSS. I did various small projects here and there, and finally in late 2013 I <b>sold</b> my very first project: <a class="text-white" href="https://otovica.com">otovica.com</a></p>
+					<p>Obviously that didn't go full-circle, as later on I picked up HTML and CSS. I did various small projects here and there, and finally in late 2013 I <b>sold</b> my very first project: <a class="text-white" target=_blank href="https://otovica.com">otovica.com</a></p>
 					<p>After that I learned a little bit of JS, picked up jQuery and started making more small projects for clients as a freelancer</p>
-					<p>In 2017, still in University, I applied for my first real professional career. I worked there until 2021, when I left to dedicate my resources and work for a client, sort of as a freelancer/contractor</p>
+					<p>In 2017, still in University, I applied for my first real professional career. I worked there until 2021, when I left to dedicate my resources and work for a client as a freelance contractor</p>
 				</div>
 			</div>
 
@@ -67,11 +67,11 @@ get_header();
 						<li class="skill">Locomotive</li>
 						<li class="skill">XML</li>
 						<li class="skill">WooCommerce</li>
-						<li class="skill">Database management</li>
+						<li class="skill">DB management</li>
 						
 					</ul>
 
-					<h3>I've dabbled with (<span>and wish to expand!</span>)</h3>
+					<h3>I've dabbled with (&nbsp;<span>and wish to expand!</span>&nbsp;)</h3>
 					<ul class="skills-tab">
 						<li class="skill highlight">React.js</li>
 						<li class="skill">Vue.js</li>
@@ -89,12 +89,24 @@ get_header();
 			<div class="section-title">
 				<div class="headline">
 					<p class="headline-catch">What's my background?</p>
-					<h2 class="headline-title headline-scaled">Let's check some past&nbsp;<span>work</span></h2>
+					<h2 class="headline-title headline-scaled">Let's take a look at some old&nbsp;<span>work</span></h2>
 				</div>
 			</div>
 
 			<aside class="section-aside">
-				
+				<div class="portfolio-tabs">
+					<div class="portfolio-item">
+						<div class="portfolio-item-info">
+							<h2 class="portfolio-title">SCII Panel</h2>
+							<div class="portfolio-description">
+								<p>This panel was created as a small doodle. The intention here was to keep very close approach to the game Starcraft II's awards tab. </p>
+							</div>
+						</div>
+						<picture class="portfolio-thumbnail">
+							<img src="https://i.imgur.com/ZZj0XYv.jpeg" alt="">
+						</picture>
+					</div>
+				</div>
 			</aside>
 		</div>
 	</section>
@@ -105,6 +117,18 @@ get_header();
 				<div class="headline">
 					<p class="headline-catch">Let's talk</p>
 					<h2 class="headline-title headline-scaled">Get in touch</h2>
+					
+					<div class="copy">
+						<p>I'm looking for a job! You can find my CV in the upper right corner. The button below should open an email client</a></p>
+					</div>
+
+					<div class="contact-group">
+						<a href="mailto:martinspatovaliyski@gmail.com" rel="noopener noreferrer" target=_blank class="button button-primary">Let's chat</a>
+						<span class="contact-copy">
+							<a id="copy-chat-clipboard" href="martinspatovaliyski@gmail.com">Copy email to clipboard instead</a>
+							<span class="copy-chat-popup">Copied!</span>
+						</span>
+					</div>
 				</div>
 			</div>
 		</div>

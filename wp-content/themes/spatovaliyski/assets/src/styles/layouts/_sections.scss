@@ -1,11 +1,18 @@
 .sections {
-	max-width: 100em;
+	max-width: 96em;
 	margin: 0 auto;
+	transition: .6s $transition-smooth;
 
 	&-homepage {
 		.section {
 
 		}
+	}
+
+	&.switching {
+		transform: translateY(-3em);
+		opacity: 0;
+
 	}
 }
 
@@ -16,6 +23,73 @@
 		display: flex;
 		flex-flow: row wrap;
 		justify-content: space-between;
+	}
+
+	&-projects {
+		width: 100%;
+		padding: 6em 2em;
+
+		.headline-catch {
+			margin-left: 0;
+		}
+
+		.section-container {
+			display: block;
+		}
+
+		.section-title {
+			max-width: 100%;
+			text-align: center;
+		}
+	}
+
+	&-contact {
+		width: 100%;
+		padding: 6em 2em;
+
+		.copy {
+			max-width: 30em;
+			margin: 0 auto;
+		}
+
+		.headline-catch {
+			margin-left: 0;
+		}
+
+		.section-container {
+			display: block;
+		}
+
+		.section-title {
+			max-width: 100%;
+			text-align: center;
+		}
+
+		.copy-chat-popup {
+			opacity: 0;
+			margin-left: 1em;
+			transition: .2s $transition-smooth;
+			position: absolute;
+
+			&.is-visible {
+				opacity: 1;
+			}
+		}
+
+		.contact-group {
+			margin: 3em 0;
+
+		
+		}
+
+		.contact-copy {
+			margin: 0 1em;
+
+			a {
+				color: #FFF;
+			}
+		}
+		
 	}
 
 	&-aside {

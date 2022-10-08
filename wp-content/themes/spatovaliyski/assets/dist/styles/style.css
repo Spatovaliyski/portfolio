@@ -511,9 +511,31 @@ table {
         -ms-flex-pack: center;
             justify-content: center;
     text-align: center;
-    list-style: none; }
+    list-style: none;
+    font-size: .85em; }
     .skills-tab li.highlight {
-      border-color: #623f84; }
+      border-color: #7749a4; }
+
+.portfolio-tabs {
+  max-width: 75em;
+  margin: 0 auto; }
+
+.portfolio-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 4em;
+  margin-top: 4em; }
+
+.portfolio-item-info {
+  -webkit-backdrop-filter: blur(1em);
+          backdrop-filter: blur(1em);
+  background: #1b1b24;
+  border-radius: 6px;
+  padding: 2.5em;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 calc(100% / 2.5);
+          flex: 0 0 calc(100% / 2.5); }
 
 /* Links
 --------------------------------------------- */
@@ -559,6 +581,16 @@ input[type="submit"] {
   input[type="submit"]:active,
   input[type="submit"]:focus {
     border-color: #aaa #bbb #bbb; }
+
+.button-primary {
+  background-color: transparent;
+  border: 1px solid #3ade5f;
+  border-radius: 4px;
+  color: #FFF;
+  padding: 1em 1.25em;
+  text-decoration: none; }
+  .button-primary:hover {
+    background-color: rgba(58, 222, 95, 0.05); }
 
 input[type="text"],
 input[type="email"],
@@ -608,8 +640,14 @@ textarea {
 # Layouts
 --------------------------------------------------------------*/
 .sections {
-  max-width: 100em;
-  margin: 0 auto; }
+  max-width: 96em;
+  margin: 0 auto;
+  -webkit-transition: 0.6s cubic-bezier(0.42, 0.47, 0, 0.87);
+  transition: 0.6s cubic-bezier(0.42, 0.47, 0, 0.87); }
+  .sections.switching {
+    -webkit-transform: translateY(-3em);
+            transform: translateY(-3em);
+    opacity: 0; }
 
 .section {
   padding: 0 2em; }
@@ -624,6 +662,43 @@ textarea {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between; }
+  .section-projects {
+    width: 100%;
+    padding: 6em 2em; }
+    .section-projects .headline-catch {
+      margin-left: 0; }
+    .section-projects .section-container {
+      display: block; }
+    .section-projects .section-title {
+      max-width: 100%;
+      text-align: center; }
+  .section-contact {
+    width: 100%;
+    padding: 6em 2em; }
+    .section-contact .copy {
+      max-width: 30em;
+      margin: 0 auto; }
+    .section-contact .headline-catch {
+      margin-left: 0; }
+    .section-contact .section-container {
+      display: block; }
+    .section-contact .section-title {
+      max-width: 100%;
+      text-align: center; }
+    .section-contact .copy-chat-popup {
+      opacity: 0;
+      margin-left: 1em;
+      -webkit-transition: 0.2s cubic-bezier(0.42, 0.47, 0, 0.87);
+      transition: 0.2s cubic-bezier(0.42, 0.47, 0, 0.87);
+      position: absolute; }
+      .section-contact .copy-chat-popup.is-visible {
+        opacity: 1; }
+    .section-contact .contact-group {
+      margin: 3em 0; }
+    .section-contact .contact-copy {
+      margin: 0 1em; }
+      .section-contact .contact-copy a {
+        color: #FFF; }
   .section-aside {
     -ms-flex-preferred-size: 680px;
         flex-basis: 680px; }
@@ -743,9 +818,8 @@ textarea {
           flex: 1 0 50%; }
 
 .site-header {
-  background: rgba(29, 29, 38, 0.98);
-  -webkit-backdrop-filter: blur(6px);
-          backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
   width: calc(100% - 2em);
   position: fixed;
   top: 1em;
@@ -760,7 +834,13 @@ textarea {
           justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
-          align-items: center; }
+          align-items: center;
+  -webkit-transition: 0.3s cubic-bezier(0.42, 0.47, 0, 0.87) background-color, 0s ease backdrop-filter;
+  transition: 0.3s cubic-bezier(0.42, 0.47, 0, 0.87) background-color, 0s ease backdrop-filter; }
+  .site-header.headroom--top {
+    background: none; }
+  .site-header.headroom--not-top {
+    background: rgba(29, 29, 38, 0.8); }
 
 .site-title a {
   position: absolute;
@@ -769,7 +849,7 @@ textarea {
           transform: translateY(-50%);
   font-size: 1.75em;
   text-decoration: none;
-  color: #3ade5f;
+  color: #FFF;
   width: 6em;
   line-height: .75;
   font-weight: 600;
@@ -796,10 +876,6 @@ textarea {
 .sticky {
   display: block; }
 
-.post,
-.page {
-  margin: 0 0 1.5em; }
-
 .updated:not(.published) {
   display: none; }
 
@@ -818,6 +894,11 @@ textarea {
   padding: 3em 0;
   margin-top: 3em;
   border-top: 1px solid #2c2c3a; }
+
+.site-info {
+  max-width: 95em;
+  margin: 0 auto;
+  padding: 0 2em; }
 
 /* Comments
 --------------------------------------------- */
