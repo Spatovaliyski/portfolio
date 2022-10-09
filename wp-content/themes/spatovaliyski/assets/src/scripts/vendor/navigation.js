@@ -6,6 +6,7 @@
  */
 ( function() {
 	const siteNavigation = document.getElementById( 'site-navigation' );
+	const homeSectionButtons = document.getElementsByClassName( 'home-tab' ); 
 	const siteBody = document.body;
 
 	// Return early if the navigation doesn't exist.
@@ -47,8 +48,17 @@
 	// Remove the .toggled class and set aria-expanded to false when the user clicks outside the navigation.
 	document.addEventListener( 'click', function( event ) {
 		const isClickInside = siteNavigation.contains( event.target );
-
+		const isHomeTabButton = event.target.parentNode;
+		console.log(isHomeTabButton);
+		
 		if ( ! isClickInside ) {
+			siteNavigation.classList.remove( 'toggled' );
+			siteBody.classList.remove( 'is-menu-opened' );
+			button.setAttribute( 'aria-expanded', 'false' );
+		}
+
+		// If the button contains one of the portfolio "click to scroll to" classs "home-tab" > close menu components and proceed with scroll behavior
+		if ( isHomeTabButton.classList.contains('home-tab') ) {
 			siteNavigation.classList.remove( 'toggled' );
 			siteBody.classList.remove( 'is-menu-opened' );
 			button.setAttribute( 'aria-expanded', 'false' );
