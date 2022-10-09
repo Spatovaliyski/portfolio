@@ -37,10 +37,7 @@ get_header();
 				</div>
 
 				<div class="copy">
-					<p>My passion for the web dates back from the very early days of WYSIWYG Web builder. That dates all the way back to around 2007-2008, where I started my very first inspirations for what the "FUTURE OF THE WEB" could be.</p>
-					<p>Obviously that didn't go full-circle, as later on I picked up HTML and CSS. I did various small projects here and there, and finally in late 2013 I <b>sold</b> my very first project: <a class="text-white" target=_blank href="https://otovica.com">otovica.com</a></p>
-					<p>After that I learned a little bit of JS, picked up jQuery and started making more small projects for clients as a freelancer</p>
-					<p>In 2017, still in University, I applied for my first real professional career. I worked there until 2021, when I left to dedicate my resources and work for a client as a freelance contractor</p>
+					<?php echo the_content(); ?>	
 				</div>
 			</div>
 
@@ -136,7 +133,7 @@ get_header();
 						</picture>
 
 						<div class="portfolio-item-info">
-							<h2 class="portfolio-title"><a target=_blank href="https://github.com/Spatovaliyski/portfolio" class="portfolio-item-link">Portfolio 2022</a></h2>
+							<h2 class="portfolio-title"><a target=_blank href="https://github.com/Spatovaliyski/portfolio" class="portfolio-item-link">Portfolio v1.0</a></h2>
 							<div class="portfolio-description">
 								<p>2022</p>
 								<p>My own portfolio is open source! The repository contains a wp-content folder, which has its theme there.</p>
