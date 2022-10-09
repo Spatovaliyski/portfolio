@@ -69,4 +69,12 @@ jQuery( document ).ready(function($) {
 	if (! $('body').hasClass('page-template-template-homepage')) {
 		$('.home-tab').remove();
 	}
+
+	// Paste link to this classname based on the Resume button
+	function copyResumeLink() {
+		let link = $('.menu-item.cv a').attr('href');
+
+		$('.applicaiton-link').attr('href', link);
+	}
+	copyResumeLink();
 });

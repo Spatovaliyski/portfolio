@@ -190,6 +190,12 @@
 			border-top: 1px solid #14141a;
 			border-top-left-radius: 0;
 			border-top-right-radius: 0;
+
+			&-toggle {
+				overflow: hidden;
+				height: 3em;
+				width: 3em;
+			}
 		}
 
 		.menu-item {
@@ -239,7 +245,7 @@
 		&.toggled {
 			.menu {
 				opacity: 1;
-				transform: translateY(0);
+				transform: translateY(.5em);
 				pointer-events: all;
 				transition: .4s $transition-reveal opacity, .3s $transition-reveal transform;
 			}
@@ -255,6 +261,44 @@
 			.cv {
 				transform: translateY(0);
 			}
+		}
+	}
+
+	// Navigation hamburger styling
+	.hamburger {
+		cursor: pointer;
+		transition: .4 $transition-reveal;
+		user-select: none;
+		pointer-events: none;
+		margin-top: -1em;
+		margin-left: -1em;
+
+		.top {
+			stroke-dasharray: 40 121;
+		}
+
+		.bottom {
+			stroke-dasharray: 40 121;
+		}
+
+		.main-navigation.toggled & .top {
+			stroke-dashoffset: -68px;
+		}
+
+		.main-navigation.toggled & .bottom {
+			stroke-dashoffset: -68px;
+		}
+
+		.line {
+			fill: none;
+			transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+			stroke: #FFF;
+			stroke-width: 3.5;
+			stroke-linecap: round;
+		}
+
+		.main-navigation.toggled &-rotate {
+			transform: rotate(45deg);
 		}
 	}
 }

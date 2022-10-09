@@ -18,7 +18,7 @@ get_header();
 				</div>
 
 				<div class="copy animation-reveal">
-					<p>I'm a Front-end developer who does theme building, plugin development, end-to-end website development with and without WordPress for just over 5 years. <a href="#">I'm looking for a job!</a></p>
+					<p>I'm a Front-end developer who does theme building, plugin development, end-to-end website development with and without WordPress for just over 5 years. <a class="applicaiton-link" target=_blank href="#">I'm looking for a job!</a></p>
 				</div>
 			</div>
 

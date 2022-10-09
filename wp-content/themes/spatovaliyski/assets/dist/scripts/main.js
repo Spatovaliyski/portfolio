@@ -61,7 +61,15 @@ jQuery(document).ready(function ($) {
 
   if (!$('body').hasClass('page-template-template-homepage')) {
     $('.home-tab').remove();
+  } // Paste link to this classname based on the Resume button
+
+
+  function copyResumeLink() {
+    let link = $('.menu-item.cv a').attr('href');
+    $('.applicaiton-link').attr('href', link);
   }
+
+  copyResumeLink();
 });
 /*!
  * headroom.js v0.12.0 - Give your page some headroom. Hide your header until you need it
@@ -261,7 +269,7 @@ jQuery(document).ready(function ($) {
     return;
   }
 
-  const button = siteNavigation.getElementsByTagName('button')[0]; // Return early if the button doesn't exist.
+  const button = siteNavigation.getElementsByClassName('menu-toggle')[0]; // Return early if the button doesn't exist.
 
   if ('undefined' === typeof button) {
     return;
