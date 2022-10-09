@@ -1,3 +1,7 @@
+// Global properties
+$side-padding-desktop: 2em;
+$side-padding-mobile: 1em;
+
 .sections {
 	max-width: 96em;
 	margin: 0 auto;
@@ -5,12 +9,6 @@
 
 	&.site-main {
 		margin-top: 12em;
-	}
-
-	&-homepage {
-		.section {
-
-		}
 	}
 
 	&.switching {
@@ -21,24 +19,44 @@
 }
 
 .section {
-	padding: 0 2em;
+	padding: 0 $side-padding-desktop;
 
+	@media (max-width: $breakpoint-medium) {
+		padding: 0 $side-padding-mobile;
+	}
+
+	// This will hide a given section with the fadeUp animation (see animations.scss)
 	&.hide-section {
 		animation: fadeUp 0.7s $transition-reveal forwards !important;
 	}
 
+	// This will show a given section with the reveal animation (see animations.scss)
+	// This has higher priority than hide-section in case we're doing a transition from hide -> show
 	&.show-section {
 		animation: revealUp 0.7s $transition-reveal forwards !important;
 	}
 
-
 	&-welcome {
+		min-height: 90vh;
+		display: flex;
+		align-items: center;
+
+		@media (max-width: $breakpoint-medium) {
+			margin-top: 20vh;
+			min-height: 60vh; // Reduce the height a lil bit for all sorts of devices under $medium. The intent is to show a little bit of the next section content while being tidy
+		}
+
 		svg {
 			width: 100%;
 		}
 
 		.section-aside {
 			flex: 1;
+
+			@media (max-width: $breakpoint-medium) {
+				position: absolute;
+				z-index: -1;
+			}
 		}
 
 		.section-container {
@@ -47,7 +65,11 @@
 	}
 
 	&-experience {
-		padding: 5em 2em;
+		padding: 5em $side-padding-desktop;
+
+		@media (max-width: $breakpoint-medium) {
+			padding: 2.5em $side-padding-mobile;
+		}
 	}
 
 	&-container {
@@ -58,7 +80,11 @@
 
 	&-projects {
 		width: 100%;
-		padding: 5em 2em;
+		padding: 5em $side-padding-desktop;
+
+		@media (max-width: $breakpoint-medium) {
+			padding: 2.5em $side-padding-mobile;
+		}
 
 		.headline-catch {
 			margin-left: 0;
@@ -71,6 +97,10 @@
 		.section-title {
 			max-width: 100%;
 			text-align: center;
+
+			@media (max-width: $breakpoint-medium) {
+				text-align: left;
+			}
 		}
 	}
 
@@ -78,8 +108,12 @@
 		width: 100%;
 
 		.section-container {
-			padding: 6em 2em;
+			padding: 6em $side-padding-desktop;
 			background: lighten($color-body, 2);
+
+			@media (max-width: $breakpoint-medium) {
+				padding: 3em $side-padding-mobile;
+			}
 		}
 
 		.copy {
@@ -129,12 +163,6 @@
 
 	&-aside {
 		flex-basis: 680px;
-	}
-
-	&-welcome {
-		min-height: 90vh;
-		display: flex;
-		align-items: center;	
 	}
 
 	&-title {

@@ -1,7 +1,7 @@
 jQuery(document).ready(function ($) {
   "use strict";
 
-  $('body').addClass("loaded, load-reveal");
+  $('body').addClass("loaded load-reveal");
   setTimeout(() => {
     $('body').removeClass('load-reveal');
   }, 1000);
@@ -254,7 +254,8 @@ jQuery(document).ready(function ($) {
  */
 
 (function () {
-  const siteNavigation = document.getElementById('site-navigation'); // Return early if the navigation doesn't exist.
+  const siteNavigation = document.getElementById('site-navigation');
+  const siteBody = document.body; // Return early if the navigation doesn't exist.
 
   if (!siteNavigation) {
     return;
@@ -279,6 +280,7 @@ jQuery(document).ready(function ($) {
 
 
   button.addEventListener('click', function () {
+    siteBody.classList.toggle('is-menu-opened');
     siteNavigation.classList.toggle('toggled');
 
     if (button.getAttribute('aria-expanded') === 'true') {
@@ -293,6 +295,7 @@ jQuery(document).ready(function ($) {
 
     if (!isClickInside) {
       siteNavigation.classList.remove('toggled');
+      siteBody.classList.remove('is-menu-opened');
       button.setAttribute('aria-expanded', 'false');
     }
   }); // Get all the link elements within the menu.

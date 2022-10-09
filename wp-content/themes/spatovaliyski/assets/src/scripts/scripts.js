@@ -1,7 +1,7 @@
 jQuery( document ).ready(function($) {
 	"use strict";
 
-	$('body').addClass("loaded, load-reveal");
+	$('body').addClass("loaded load-reveal");
 
 	setTimeout(() => {
 		$('body').removeClass('load-reveal');
