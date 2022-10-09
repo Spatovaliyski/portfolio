@@ -744,8 +744,8 @@ table {
             transform: scale(1.5) rotate(-10deg);
     -webkit-transition: 0.3s cubic-bezier(0.42, 0.47, 0, 0.87) all;
     transition: 0.3s cubic-bezier(0.42, 0.47, 0, 0.87) all;
-    -webkit-transform-origin: top center;
-            transform-origin: top center;
+    -webkit-transform-origin: center;
+            transform-origin: center;
     opacity: .2; }
 
 .portfolio-meta {
