@@ -102,7 +102,7 @@ get_header();
 				<div class="portfolio-tabs">
 					<div class="portfolio-item">
 						<picture class="portfolio-thumbnail">
-							<img src="https://i.imgur.com/zaCnCpa.jpeg" alt="">
+							<img src="http://spatovaliyski.com/wp-content/uploads/2022/10/chrome_9IAdHpKTiN.jpg" alt="">
 						</picture>
 
 						<div class="portfolio-item-info">
@@ -132,7 +132,7 @@ get_header();
 
 					<div class="portfolio-item">
 						<picture class="portfolio-thumbnail">
-							<img src="https://i.imgur.com/W5QsONj.png" alt="">
+							<img src="http://spatovaliyski.com/wp-content/uploads/2022/10/chrome_oKHPxdr4zL.png" alt="">
 						</picture>
 
 						<div class="portfolio-item-info">
@@ -160,7 +160,7 @@ get_header();
 
 					<div class="portfolio-item">
 						<picture class="portfolio-thumbnail">
-							<img src="https://i.imgur.com/ZZj0XYv.jpeg" alt="">
+							<img src="http://spatovaliyski.com/wp-content/uploads/2022/10/chrome_hC77g9HnVT.png" alt="">
 						</picture>
 
 						<div class="portfolio-item-info">
@@ -186,7 +186,7 @@ get_header();
 
 					<div class="portfolio-item">
 						<picture class="portfolio-thumbnail">
-							<img src="https://i.imgur.com/T2rKS0q.png" alt="">
+							<img src="http://spatovaliyski.com/wp-content/uploads/2022/10/chrome_qEbCacuGel.png" alt="">
 						</picture>
 
 						<div class="portfolio-item-info">
