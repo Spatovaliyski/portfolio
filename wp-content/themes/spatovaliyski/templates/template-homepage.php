@@ -129,7 +129,7 @@ get_header();
 
 					<div class="portfolio-item">
 						<picture class="portfolio-thumbnail">
-							<img src="http://spatovaliyski.com/wp-content/uploads/2022/10/CaqWzGe.png" alt="">
+							<img src="https://spatovaliyski.com/wp-content/uploads/2022/10/CaqWzGe.png" alt="">
 						</picture>
 
 						<div class="portfolio-item-info">
