@@ -9,7 +9,7 @@
 
 if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '20221013' );
+	define( '_S_VERSION', '20221013-0001' );
 }
 
 /**
@@ -141,8 +141,7 @@ function spatovaliyski_scripts() {
 	wp_enqueue_style( 'spatovaliyski-style', get_template_directory_uri() . '/assets/dist/styles/style.min.css', array(), _S_VERSION );
 	wp_style_add_data( 'spatovaliyski-style', 'rtl', 'replace' );
 
-	wp_enqueue_script( 'jquery' );
-	wp_enqueue_script( 'spatovaliyski-navigation', get_template_directory_uri() . '/assets/dist/scripts/main.min.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'spatovaliyski-navigation', get_template_directory_uri() . '/assets/dist/scripts/main.min.js', array( 'jquery' ), _S_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
