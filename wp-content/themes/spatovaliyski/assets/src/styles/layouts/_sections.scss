@@ -177,6 +177,16 @@ $side-padding-mobile: 1em;
 
 	&-aside {
 		flex-basis: 680px;
+		margin-left: 2em;
+
+		@media (max-width: 1460px) {
+			flex: 1;
+		}
+
+		@media (max-width: $breakpoint-large) {
+			margin-left: 0;
+			flex: 1 1 100%;
+		}
 	}
 
 	&-title {

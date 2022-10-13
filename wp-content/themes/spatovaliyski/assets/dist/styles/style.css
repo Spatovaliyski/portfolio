@@ -632,8 +632,8 @@ table {
   padding: 0;
   margin-bottom: 2.5em; }
   .skills-tab li {
-    -ms-flex-preferred-size: calc(100% / 5);
-        flex-basis: calc(100% / 5);
+    -ms-flex-preferred-size: calc(100% / 5 - 1em);
+        flex-basis: calc(100% / 5 - 1em);
     margin-right: 1em;
     margin-bottom: 1em;
     padding: .25em .5em;
@@ -655,6 +655,14 @@ table {
     .skills-tab li.highlight {
       color: #FFF;
       border-color: #7749a4; }
+    @media (max-width: 1460px) {
+      .skills-tab li {
+        -ms-flex-preferred-size: calc(100% / 4 - 1em);
+            flex-basis: calc(100% / 4 - 1em); } }
+    @media (max-width: 1200px) {
+      .skills-tab li {
+        -ms-flex-preferred-size: calc(100% / 5 - 1em);
+            flex-basis: calc(100% / 5 - 1em); } }
 
 .portfolio-tabs {
   max-width: 75em;
@@ -1048,7 +1056,19 @@ textarea {
         color: #FFF; }
   .section-aside {
     -ms-flex-preferred-size: 680px;
-        flex-basis: 680px; }
+        flex-basis: 680px;
+    margin-left: 2em; }
+    @media (max-width: 1460px) {
+      .section-aside {
+        -webkit-box-flex: 1;
+            -ms-flex: 1;
+                flex: 1; } }
+    @media (max-width: 1200px) {
+      .section-aside {
+        margin-left: 0;
+        -webkit-box-flex: 1;
+            -ms-flex: 1 1 100%;
+                flex: 1 1 100%; } }
   .section-title {
     max-width: 42em; }
     .section-title span {

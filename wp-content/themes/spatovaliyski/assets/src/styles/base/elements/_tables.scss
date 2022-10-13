@@ -18,7 +18,7 @@ table {
 	margin-bottom: 2.5em;
 	
 	li {
-		flex-basis: calc(100% / 5);
+		flex-basis: calc(100% / 5 - 1em);
 		margin-right: 1em;
 		margin-bottom: 1em;
 		padding: .25em .5em;
@@ -37,6 +37,14 @@ table {
 		&.highlight {
 			color: #FFF;
 			border-color: #7749a4;
+		}
+
+		@media (max-width: 1460px) {
+			flex-basis: calc(100% / 4 - 1em);
+		}
+
+		@media (max-width: $breakpoint-large) {
+			flex-basis: calc(100% / 5 - 1em);
 		}
 	}
 }
