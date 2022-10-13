@@ -39,8 +39,8 @@ gulp.task('styles', function(){
 				console.log(error.message);
 				this.emit('end');
 		}}))
-		.pipe(sass())
 		.pipe(sourcemaps.init())
+		.pipe(sass())
 		.pipe(autoprefixer('last 2 versions'))
 		.pipe(sourcemaps.write("./"))
 		.pipe(gulp.dest('assets/dist/styles/'))
@@ -54,7 +54,7 @@ gulp.task("cssmin", function() {
 	.pipe(sourcemaps.init({ loadMaps: true }))
 	.pipe(cleanCSS({ compatibility: "ie8" }))
 	.pipe(rename({ suffix: ".min" }))
-	.pipe(sourcemaps.write('./'))
+	.pipe(sourcemaps.write("./"))
 	.pipe(gulp.dest('assets/dist/styles'))
 });
 

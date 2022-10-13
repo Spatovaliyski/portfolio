@@ -10,6 +10,10 @@ body {
 	}
 
 	&.load-reveal {
+		.sections {
+			overflow: hidden;
+		}
+		
 		.section {
 			animation: loadSite 0.7s $transition-reveal forwards;
 		}

@@ -134,8 +134,8 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @-webkit-keyframes loadSite {
   from {
     opacity: 0;
-    -webkit-transform: translateY(2.2em);
-            transform: translateY(2.2em); }
+    -webkit-transform: translateY(1.6em);
+            transform: translateY(1.6em); }
   to {
     opacity: 1;
     -webkit-transform: translateY(0);
@@ -144,12 +144,34 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @keyframes loadSite {
   from {
     opacity: 0;
-    -webkit-transform: translateY(2.2em);
-            transform: translateY(2.2em); }
+    -webkit-transform: translateY(1.6em);
+            transform: translateY(1.6em); }
   to {
     opacity: 1;
     -webkit-transform: translateY(0);
             transform: translateY(0); } }
+
+@-webkit-keyframes contextMask {
+  0% {
+    opacity: 0;
+    -webkit-clip-path: inset(0 100% 0 0);
+            clip-path: inset(0 100% 0 0); }
+  50% {
+    opacity: 1; }
+  100% {
+    -webkit-clip-path: inset(0 0 0 0);
+            clip-path: inset(0 0 0 0); } }
+
+@keyframes contextMask {
+  0% {
+    opacity: 0;
+    -webkit-clip-path: inset(0 100% 0 0);
+            clip-path: inset(0 100% 0 0); }
+  50% {
+    opacity: 1; }
+  100% {
+    -webkit-clip-path: inset(0 0 0 0);
+            clip-path: inset(0 0 0 0); } }
 
 /* Normalize
 --------------------------------------------- */
@@ -545,6 +567,8 @@ body {
     transition: 0.6s cubic-bezier(0.3, 0, 0.13, 0.72);
     opacity: 0;
     pointer-events: none; }
+  body.load-reveal .sections {
+    overflow: hidden; }
   body.load-reveal .section {
     -webkit-animation: loadSite 0.7s cubic-bezier(0.3, 0, 0.13, 0.72) forwards;
             animation: loadSite 0.7s cubic-bezier(0.3, 0, 0.13, 0.72) forwards; }
@@ -983,6 +1007,68 @@ textarea {
       -webkit-box-align: center;
           -ms-flex-align: center;
               align-items: center; }
+    .section-welcome .headline-title p, .section-welcome .headline-title span {
+      -webkit-transition: color 0s cubic-bezier(0.42, 0.47, 0, 0.87);
+      transition: color 0s cubic-bezier(0.42, 0.47, 0, 0.87);
+      color: rgba(255, 255, 255, 0.1);
+      position: relative; }
+      .section-welcome .headline-title p:before, .section-welcome .headline-title span:before {
+        color: #FFF;
+        content: attr(data-context);
+        position: absolute;
+        will-change: clip-path;
+        z-index: -10;
+        -webkit-animation: var(--reveal-text-time) cubic-bezier(0.42, 0.47, 0, 0.87) 0s 1 normal forwards contextMask;
+                animation: var(--reveal-text-time) cubic-bezier(0.42, 0.47, 0, 0.87) 0s 1 normal forwards contextMask; }
+    .section-welcome .headline-title span:before {
+      color: #3ade5f; }
+    .section-welcome .headline-catch {
+      -webkit-transition: color 0s cubic-bezier(0.42, 0.47, 0, 0.87);
+      transition: color 0s cubic-bezier(0.42, 0.47, 0, 0.87);
+      color: rgba(255, 255, 255, 0.1);
+      position: relative;
+      --reveal-text-time: 1.8s; }
+      .section-welcome .headline-catch:before {
+        color: #FFF;
+        content: attr(data-context);
+        position: absolute;
+        will-change: clip-path;
+        z-index: -10;
+        -webkit-animation: var(--reveal-text-time) cubic-bezier(0.42, 0.47, 0, 0.87) 0s 1 normal forwards contextMask;
+                animation: var(--reveal-text-time) cubic-bezier(0.42, 0.47, 0, 0.87) 0s 1 normal forwards contextMask; }
+    .section-welcome .headline-title {
+      --reveal-text-time: 1.2s; }
+      .section-welcome .headline-title p {
+        display: inline-block;
+        margin: 0; }
+    .section-welcome .headline-subtitle {
+      -webkit-transition: color 0s cubic-bezier(0.42, 0.47, 0, 0.87);
+      transition: color 0s cubic-bezier(0.42, 0.47, 0, 0.87);
+      color: rgba(255, 255, 255, 0.1);
+      position: relative;
+      --reveal-text-time: 1.8s; }
+      .section-welcome .headline-subtitle:before {
+        color: #FFF;
+        content: attr(data-context);
+        position: absolute;
+        will-change: clip-path;
+        z-index: -10;
+        -webkit-animation: var(--reveal-text-time) cubic-bezier(0.42, 0.47, 0, 0.87) 0s 1 normal forwards contextMask;
+                animation: var(--reveal-text-time) cubic-bezier(0.42, 0.47, 0, 0.87) 0s 1 normal forwards contextMask; }
+    .section-welcome .copy p {
+      -webkit-transition: color 0s cubic-bezier(0.42, 0.47, 0, 0.87);
+      transition: color 0s cubic-bezier(0.42, 0.47, 0, 0.87);
+      color: rgba(255, 255, 255, 0.1);
+      position: relative;
+      --reveal-text-time: 1.8s; }
+      .section-welcome .copy p:before {
+        color: #FFF;
+        content: attr(data-context);
+        position: absolute;
+        will-change: clip-path;
+        z-index: -10;
+        -webkit-animation: var(--reveal-text-time) cubic-bezier(0.42, 0.47, 0, 0.87) 0s 1 normal forwards contextMask;
+                animation: var(--reveal-text-time) cubic-bezier(0.42, 0.47, 0, 0.87) 0s 1 normal forwards contextMask; }
   .section-experience {
     padding: 5em 2em; }
     @media (max-width: 1024px) {

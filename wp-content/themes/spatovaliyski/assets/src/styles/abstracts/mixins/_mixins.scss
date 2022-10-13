@@ -9,3 +9,18 @@
 @mixin column-width($numberColumns: 3) {
 	width: map-get($columns, $numberColumns) - ( ( $columns__margin * ( $numberColumns - 1 ) ) / $numberColumns );
 }
+
+@mixin mixinRevealText {
+	transition: color 0s $transition-smooth;
+	color: rgba(white, .1);
+	position: relative;
+	
+	&:before {
+		color: #FFF;
+		content: attr(data-context);
+		position: absolute;
+		will-change: clip-path;
+		z-index: -10;
+		animation: var(--reveal-text-time) $transition-smooth 0s 1 normal forwards contextMask;
+	}
+}

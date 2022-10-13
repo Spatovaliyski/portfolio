@@ -12,13 +12,18 @@ get_header();
 		<div class="section-container">
 			<div class="section-title">
 				<div class="headline">
-					<p class="headline-catch">Let's keep it simple</p>
-					<h1 class="headline-title headline-scaled">Heya,<br><span>I'm</span>&nbsp;Martin Spatovaliyski</h1>
-					<h3 class="headline-subtitle">web developer / WordPress enthusiast, core contributor</h3>
+					<p class="headline-catch" data-context>Let's keep it simple</p>
+					<h1 class="headline-title headline-scaled">
+						<p data-context>Heya,</p>
+						<br>
+						<span data-context>I'm</span>&nbsp;
+						<p data-context>Martin Spatovaliyski</p>
+					</h1>
+					<h3 class="headline-subtitle" data-context>web developer / WordPress enthusiast, core contributor</h3>
 				</div>
 
 				<div class="copy animation-reveal">
-					<p>I'm a Front-end developer who does theme building, plugin development, end-to-end website development with and without WordPress for just over 5 years. <a class="applicaiton-link" target=_blank href="#">I'm looking for a job!</a></p>
+					<p data-context>I'm a Front-end developer who does theme building, plugin development, end-to-end website development with and without WordPress for just over 5 years.</p>
 				</div>
 			</div>
 

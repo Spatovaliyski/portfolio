@@ -66,6 +66,45 @@ $side-padding-mobile: 1em;
 		.section-container {
 			align-items: center;
 		}
+
+		.headline-title {
+			p, span {
+				@include mixinRevealText;
+			}
+
+			span {
+				&:before {
+					color: $color-toxic;
+				}
+			}
+		}
+
+		.headline-catch {
+			@include mixinRevealText;
+
+			--reveal-text-time: 1.8s;
+		}
+
+		.headline-title {
+			--reveal-text-time: 1.2s;
+
+			p {
+				display: inline-block;
+				margin: 0;
+			}
+		}
+
+		.headline-subtitle {
+			@include mixinRevealText;
+
+			--reveal-text-time: 1.8s;
+		}
+
+		.copy p {
+			@include mixinRevealText;
+
+			--reveal-text-time: 1.8s;
+		}
 	}
 
 	&-experience {
