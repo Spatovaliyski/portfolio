@@ -1002,7 +1002,7 @@ textarea {
       @media (max-width: 1024px) {
         .section-welcome .section-aside {
           position: absolute;
-          z-index: -1; } }
+          z-index: -12; } }
     .section-welcome .section-container {
       -webkit-box-align: center;
           -ms-flex-align: center;
