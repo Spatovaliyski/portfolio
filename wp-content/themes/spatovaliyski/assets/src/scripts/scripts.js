@@ -81,7 +81,7 @@ jQuery( document ).ready(function($) {
 	// To get the homepage animation going we need to copy the data attribute and strip its markup
 	function setHomepageAnimationContent(item) {
 		$(item).attr('data-context', item.innerText);
-		console.log(item);
+		//console.log(item);
 	}
 
 	const dataContextBoxes = $('[data-context]');
