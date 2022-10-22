@@ -104,7 +104,7 @@ get_header();
 				<div class="portfolio-tabs">
 					<div class="portfolio-item">
 						<picture class="portfolio-thumbnail">
-							<img src="https://spatovaliyski.com/wp-content/uploads/2022/10/chrome_9IAdHpKTiN.jpg" alt="">
+							<img src="https://wp.spatovaliyski.com/wp-content/uploads/2022/10/chrome_9IAdHpKTiN.jpg" alt="">
 						</picture>
 
 						<div class="portfolio-item-info">
@@ -134,7 +134,7 @@ get_header();
 
 					<div class="portfolio-item">
 						<picture class="portfolio-thumbnail">
-							<img src="https://spatovaliyski.com/wp-content/uploads/2022/10/chrome_oKHPxdr4zL.png" alt="">
+							<img src="https://wp.spatovaliyski.com/wp-content/uploads/2022/10/chrome_oKHPxdr4zL.png" alt="">
 						</picture>
 
 						<div class="portfolio-item-info">
@@ -162,7 +162,7 @@ get_header();
 
 					<div class="portfolio-item">
 						<picture class="portfolio-thumbnail">
-							<img src="https://spatovaliyski.com/wp-content/uploads/2022/10/CaqWzGe.png" alt="">
+							<img src="https://wp.spatovaliyski.com/wp-content/uploads/2022/10/CaqWzGe.png" alt="">
 						</picture>
 
 						<div class="portfolio-item-info">
@@ -189,7 +189,7 @@ get_header();
 
 					<div class="portfolio-item">
 						<picture class="portfolio-thumbnail">
-							<img src="https://spatovaliyski.com/wp-content/uploads/2022/10/chrome_hC77g9HnVT.png" alt="">
+							<img src="https://wp.spatovaliyski.com/wp-content/uploads/2022/10/chrome_hC77g9HnVT.png" alt="">
 						</picture>
 
 						<div class="portfolio-item-info">
@@ -215,7 +215,7 @@ get_header();
 
 					<div class="portfolio-item">
 						<picture class="portfolio-thumbnail">
-							<img src="https://spatovaliyski.com/wp-content/uploads/2022/10/chrome_qEbCacuGel.png" alt="">
+							<img src="https://wp.spatovaliyski.com/wp-content/uploads/2022/10/chrome_qEbCacuGel.png" alt="">
 						</picture>
 
 						<div class="portfolio-item-info">
