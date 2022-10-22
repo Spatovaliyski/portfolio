@@ -250,7 +250,7 @@ get_header();
 					<h2 class="headline-title headline-scaled">Get in touch</h2>
 					
 					<div class="copy">
-						<p>I'm currently looking for new oportunities! The button below should open an email client with my Email address auto-filled.</p>
+						<p>I'm currently looking for new opportunities! The button below should open an email client with my Email address auto-filled.</p>
 					</div>
 
 					<div class="contact-group">
