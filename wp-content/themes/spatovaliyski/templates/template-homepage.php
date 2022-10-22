@@ -16,7 +16,7 @@ get_header();
 					<h1 class="headline-title headline-scaled">
 						<p data-context>Heya,</p>
 						<br>
-						<span data-context>I'm</span>&nbsp;
+						<span data-context>I'm</span>
 						<p data-context>Martin Spatovaliyski</p>
 					</h1>
 					<h3 class="headline-subtitle" data-context>web developer / WordPress enthusiast, core contributor</h3>
