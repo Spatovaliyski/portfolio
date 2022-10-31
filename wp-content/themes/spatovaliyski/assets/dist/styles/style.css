@@ -1454,6 +1454,30 @@ textarea {
     .site-title a:hover:before {
       width: 100%; }
 
+.site-branding {
+  width: 168px;
+  display: block;
+  margin-left: 0;
+  margin-right: auto; }
+
+.site-branding-type {
+  position: relative;
+  margin-right: 1.5em;
+  line-height: 1;
+  margin: auto 1.5em auto 0; }
+  .site-branding-type:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    left: 0; }
+  .site-branding-type svg {
+    width: 32px;
+    height: 100%;
+    color: white; }
+  .site-branding-type h3 {
+    margin: 0; }
+
 /* Posts and pages
 --------------------------------------------- */
 .sticky {

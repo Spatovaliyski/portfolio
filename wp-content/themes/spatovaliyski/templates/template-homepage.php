@@ -19,11 +19,11 @@ get_header();
 						<span data-context>I'm</span>
 						<p data-context>Martin Spatovaliyski</p>
 					</h1>
-					<h3 class="headline-subtitle" data-context>web developer / WordPress enthusiast, core contributor</h3>
+					<h3 class="headline-subtitle" data-context>Front-end developer, UI/UX Engineer, WordPress enthusiast</h3>
 				</div>
 
 				<div class="copy animation-reveal">
-					<p data-context>I'm a Front-end developer who does theme building, plugin development, end-to-end website development with and without WordPress for just over 5 years.</p>
+					<p data-context>I am Front-end developer who does end-to-end website development, apps, doodles, WordPress custom theme building, plugin development, custom solutions for just over 5 years</p>
 				</div>
 			</div>
 
@@ -53,38 +53,31 @@ get_header();
 						<li class="skill highlight">HTML5</li>
 						<li class="skill highlight">SCSS/CSS</li>
 						<li class="skill highlight">Git</li>
-						<li class="skill highlight">jQuery</li>
-						<li class="skill highlight">JSON</li>
-						<li class="skill highlight">Ajax</li>
 						<li class="skill highlight">ACF</li>
-						<li class="skill highlight">Gulp</li>
-						<li class="skill highlight">PHP</li>
-						<li class="skill highlight">LAMP</li>
+						<li class="skill highlight">jQuery</li>
+						<li class="skill highlight">JavaScript (ES6)</li>
+						<li class="skill highlight">Ajax</li>
+						<li class="skill highlight">GSAP</li>
 						<li class="skill highlight">WordPress</li>
-						<li class="skill highlight">Foundation 5</li>
-						<li class="skill highlight">E2E Development</li>
-						<li class="skill highlight">Project Leadership</li>
-					</ul>
-
-					<h3>What I've picked from time to time (on a need basis)</h3>
-					<ul class="skills-tab">
-						<li class="skill">Bootstrap</li>
-						<li class="skill">GSAP</li>
-						<li class="skill">Locomotive</li>
-						<li class="skill">XML</li>
-						<li class="skill">WooCommerce</li>
-						<li class="skill">DB management</li>
-						<li class="skill">Figma</li>
-						<li class="skill">Adobe Suite</li>
-					</ul>
-
-					<h3>I've dabbled with (&nbsp;<span>and wish to expand!</span>&nbsp;)</h3>
-					<ul class="skills-tab">
 						<li class="skill highlight">React</li>
+						<li class="skill highlight">Gulp</li>
+						<li class="skill highlight">JSON</li>
+						<li class="skill highlight">Foundation 5</li>
+						<li class="skill highlight">Adobe Suite</li>
+					</ul>
+
+					<h3>Additionally, I have dabbled with</h3>
+					<ul class="skills-tab">
+						<li class="skill">Locomotive.js</li>
+						<li class="skill">PHP</li>
 						<li class="skill">Vue</li>
-						<li class="skill">Three.js</li>
-						<li class="skill">Laravel</li>
-						<li class="skill">Python</li>
+						<li class="skill">XML</li>
+						<li class="skill">SQL</li>
+						<li class="skill">WooCommerce</li>
+						<li class="skill">LAMP</li>
+						<li class="skill">Figma</li>
+						<li class="skill">E2E Development</li>
+						<li class="skill">Project Leadership</li>
 					</ul>
 				</div>
 			</aside>
