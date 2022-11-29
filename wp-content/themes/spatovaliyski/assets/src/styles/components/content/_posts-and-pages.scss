@@ -16,3 +16,62 @@
 	clear: both;
 	margin: 0 0 1.5em;
 }
+
+.page-template-template-clean {
+	background: white;
+
+	.site-branding-type svg {
+		color: $color-body;
+	}
+
+	.site-title a {
+		color: $color-body;
+	}
+
+	.main-navigation a {
+		color: $color-body;
+	}
+
+	.main-navigation li.cv {
+		border-color: $color-body;
+	}
+
+	.site-footer {
+		color: $color-body;
+
+		a {
+			color: $color-body;
+
+			&:visited {
+				color: $color-body;
+			}
+		}
+	}
+
+	.roi-data input {
+		border-width: 0 0 1px;
+		color: #888;
+		background-color: transparent;
+		border-color: #888;
+		border-radius: 0;
+		padding: 0;
+		padding-left: .85rem;
+
+		@media (hover: none) {
+			padding-left: 0;
+		}
+
+		&:focus-visible {
+			border-color: #9dc53b;
+			outline: none;
+		}
+	}
+
+	.roi-links a { 
+		text-decoration: none;
+	}
+
+	.sections .section:only-child {
+		min-height: 78vh;
+	}
+}

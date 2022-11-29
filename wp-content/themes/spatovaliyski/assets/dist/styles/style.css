@@ -1069,6 +1069,22 @@ textarea {
         z-index: -10;
         -webkit-animation: var(--reveal-text-time) cubic-bezier(0.42, 0.47, 0, 0.87) 0s 1 normal forwards contextMask;
                 animation: var(--reveal-text-time) cubic-bezier(0.42, 0.47, 0, 0.87) 0s 1 normal forwards contextMask; }
+  .section-clean {
+    background-color: #ffffff;
+    min-height: 90vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+    @media (max-width: 1024px) {
+      .section-clean {
+        margin-top: 20vh;
+        min-height: 60vh; } }
   .section-experience {
     padding: 5em 2em; }
     @media (max-width: 1024px) {
@@ -1494,6 +1510,41 @@ textarea {
 .page-links {
   clear: both;
   margin: 0 0 1.5em; }
+
+.page-template-template-clean {
+  background: white; }
+  .page-template-template-clean .site-branding-type svg {
+    color: #16161d; }
+  .page-template-template-clean .site-title a {
+    color: #16161d; }
+  .page-template-template-clean .main-navigation a {
+    color: #16161d; }
+  .page-template-template-clean .main-navigation li.cv {
+    border-color: #16161d; }
+  .page-template-template-clean .site-footer {
+    color: #16161d; }
+    .page-template-template-clean .site-footer a {
+      color: #16161d; }
+      .page-template-template-clean .site-footer a:visited {
+        color: #16161d; }
+  .page-template-template-clean .roi-data input {
+    border-width: 0 0 1px;
+    color: #888;
+    background-color: transparent;
+    border-color: #888;
+    border-radius: 0;
+    padding: 0;
+    padding-left: .85rem; }
+    @media (hover: none) {
+      .page-template-template-clean .roi-data input {
+        padding-left: 0; } }
+    .page-template-template-clean .roi-data input:focus-visible {
+      border-color: #9dc53b;
+      outline: none; }
+  .page-template-template-clean .roi-links a {
+    text-decoration: none; }
+  .page-template-template-clean .sections .section:only-child {
+    min-height: 78vh; }
 
 /* Footer
 --------------------------------------------- */
