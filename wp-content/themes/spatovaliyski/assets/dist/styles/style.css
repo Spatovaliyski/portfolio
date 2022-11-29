@@ -1545,6 +1545,8 @@ textarea {
     text-decoration: none; }
   .page-template-template-clean .sections .section:only-child {
     min-height: 78vh; }
+  .page-template-template-clean .post-password-form {
+    color: #16161d; }
 
 /* Footer
 --------------------------------------------- */
