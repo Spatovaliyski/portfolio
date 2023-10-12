@@ -1,0 +1,17 @@
+/* Style for the custom meta box */
+.experience-meta-box {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+/* Style for individual input fields */
+.experience-meta-box label {
+  margin-bottom: 0.5em;
+}
+
+.experience-meta-box input {
+  width: 100%;
+  padding: 0.5em;
+  box-sizing: border-box;
+}
