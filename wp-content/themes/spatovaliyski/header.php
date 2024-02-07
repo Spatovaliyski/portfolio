@@ -65,7 +65,6 @@
 			$spatovaliyski_description = get_bloginfo( 'description', 'display' );
 			if ( $spatovaliyski_description || is_customize_preview() ) :
 				?>
-				<p class="site-description"><?php echo $spatovaliyski_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
 			<?php endif; ?>
 		</div><!-- .site-branding -->
 
