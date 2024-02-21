@@ -7,6 +7,9 @@ Author: Martin Spatovaliyski
 */
 
 class Work_Experience {
+  /** 
+   * Constructor
+   */
   public function __construct() {
     add_action('init', array($this, 'register_post_type'));
     add_action('add_meta_boxes', array($this, 'add_custom_meta_box'));
@@ -17,6 +20,12 @@ class Work_Experience {
     add_action('admin_enqueue_scripts', array($this, 'enqueue_custom_styles'));
   }
 
+  /** 
+   * Register the custom post type
+   * 
+   * @return void
+   * 
+   */
   public function register_post_type() {
     $labels = array(
       'name'               => _x('Work Experiences', 'Post Type General Name', 'martin'),
@@ -58,6 +67,11 @@ class Work_Experience {
     register_post_type( 'work_experience', $args );
   }
 
+  /** 
+   * Add custom meta box
+   * 
+   * @return void
+   */
   public function add_custom_meta_box() {
     add_meta_box(
       'work_experience_meta_box',
@@ -69,6 +83,13 @@ class Work_Experience {
     );
   }
 
+  /** 
+   * Render custom fields meta box (No Plugin, natvie WP custom fields)
+   * 
+   * @param WP_Post $post
+   * 
+   * @return void
+   */
   public function render_custom_fields_meta_box($post) {
     $start_year = get_post_meta($post->ID, 'start_year', true);
     $end_year = get_post_meta($post->ID, 'end_year', true);
@@ -97,6 +118,13 @@ class Work_Experience {
     <?php
   }
 
+  /** 
+   * Save the custom fields
+   * 
+   * @param int $post_id
+   * 
+   * @return void
+   */
   public function save_custom_fields($post_id) {
     if (array_key_exists('start_year', $_POST)) {
       update_post_meta(
@@ -131,6 +159,11 @@ class Work_Experience {
     }
   }
 
+  /** 
+   * Add custom fields to the REST API
+   * 
+   * @return void
+   */
   public function add_custom_fields_to_api() {
     register_rest_field('work_experience',
       'the_content',
@@ -178,7 +211,11 @@ class Work_Experience {
     );
   }
 
-
+  /** 
+   * Add REST API support
+   * 
+   * @return void
+   */
   public function add_rest_api_support() {
     $post_type_object = get_post_type_object('work_experience');
   
@@ -189,27 +226,82 @@ class Work_Experience {
     }
   }
 
+  /** 
+   * Get the content of the post
+   * API callback
+   * 
+   * @param array $object
+   * @param string $field_name
+   * @param WP_REST_Request $request
+   * 
+   * @return string
+   */
   public function get_the_content($object, $field_name, $request) {
     $content = get_post_field('post_content', $object['id']);
     return strip_tags($content);
   }
   
+  /** 
+   * Get the start year of the work experience
+   * API callback
+   * 
+   * @param array $object
+   * @param string $field_name
+   * @param WP_REST_Request $request
+   * 
+   * @return string
+   */
   public function get_start_year($object, $field_name, $request) {
     return get_post_meta($object['id'], 'start_year', true);
   }
   
+  /** 
+   * Get the end year of the work experience
+   * API callback
+   * 
+   * @param array $object
+   * @param string $field_name
+   * @param WP_REST_Request $request
+   * 
+   * @return string
+   */
   public function get_end_year($object, $field_name, $request) {
     return get_post_meta($object['id'], 'end_year', true);
   }
 
+  /**
+   * Get the company position
+   * API callback
+   * 
+   * @param array $object
+   * @param string $field_name
+   * @param WP_REST_Request $request
+   * 
+   * @return string
+   */
   public function get_company_position($object, $field_name, $request) {
     return get_post_meta($object['id'], 'company_position', true);
   }
 
+  /**
+   * Get the location
+   * API callback
+   * 
+   * @param array $object
+   * @param string $field_name
+   * @param WP_REST_Request $request
+   * 
+   * @return string
+   */
   public function get_location($object, $field_name, $request) {
     return get_post_meta($object['id'], 'location', true);
   }
 
+  /**
+   * Enqueue custom styles
+   * 
+   * @return void
+   */
   public function enqueue_custom_styles() {
     wp_enqueue_style('work-experience-styles', plugin_dir_url(__FILE__) . 'style.css');
   }

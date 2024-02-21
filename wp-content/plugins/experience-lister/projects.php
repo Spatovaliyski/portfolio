@@ -7,6 +7,9 @@ Author: Martin Spatovaliyski
 */
 
 class Work_Projects {
+  /** 
+   * Constructor
+   */
   public function __construct() {
     add_action('init', array($this, 'register_post_type'));
     add_action('init', array($this, 'add_tags_support'));
@@ -19,6 +22,11 @@ class Work_Projects {
     add_action('admin_enqueue_scripts', array($this, 'enqueue_custom_styles'));
   }
 
+  /** 
+   * Register the custom post type
+   * 
+   * @return void
+   */
   public function register_post_type() {
     $labels = array(
       'name'               => _x('Work Projects', 'Post Type General Name', 'martin'),
@@ -61,6 +69,11 @@ class Work_Projects {
     register_post_type( 'work_projects', $args );
   }
 
+  /** 
+   * Add custom meta box
+   * 
+   * @return void
+   */
   public function add_custom_meta_box() {
     add_meta_box(
       'work_projects_meta_box',
@@ -72,6 +85,13 @@ class Work_Projects {
     );
   }
 
+  /**
+   * Render custom fields meta box (No Plugin, natvie WP custom fields)
+   * 
+   * @param WP_Post $post
+   * 
+   * @return void
+   */
   public function render_custom_fields_meta_box($post) {
     $end_year = get_post_meta($post->ID, 'end_year', true);
     $company_position = get_post_meta($post->ID, 'company_position', true);
@@ -91,6 +111,11 @@ class Work_Projects {
     <?php
   }
 
+  /** 
+   * Save the custom fields
+   * 
+   * @param int $post_id
+   */
   public function save_custom_fields($post_id) {
     if (array_key_exists('end_year', $_POST)) {
       update_post_meta(
@@ -109,6 +134,11 @@ class Work_Projects {
     }
   }
 
+  /** 
+   * Add custom fields to the REST API
+   * 
+   * @return void
+   */
   public function add_custom_fields_to_api() {
     register_rest_field('work_projects',
       'the_content',
@@ -119,7 +149,6 @@ class Work_Projects {
       )
     );
 
-
     register_rest_field('work_projects',
       'end_year',
       array(
@@ -128,7 +157,6 @@ class Work_Projects {
         'schema'          => null,
       )
     );
-
 
     register_rest_field('work_projects',
       'repository',
@@ -149,7 +177,11 @@ class Work_Projects {
     );
   }
 
-
+  /**
+   * Add REST API support
+   * 
+   * @return void
+   */
   public function add_rest_api_support() {
     $post_type_object = get_post_type_object('work_projects');
   
@@ -160,27 +192,75 @@ class Work_Projects {
     }
   }
 
+  /** 
+   * Get the content
+   * API callback
+   * 
+   * @param array $object
+   * @param string $field_name
+   * @param WP_REST_Request $request
+   * 
+   * @return string
+   */
   public function get_the_content($object, $field_name, $request) {
     $content = get_post_field('post_content', $object['id']);
     return strip_tags($content);
   }
   
+  /** 
+   * Get the end year
+   * API callback
+   * 
+   * @param array $object
+   * @param string $field_name
+   * @param WP_REST_Request $request
+   * 
+   * @return string
+   */
   public function get_end_year($object, $field_name, $request) {
     return get_post_meta($object['id'], 'end_year', true);
   }
 
+  /**
+   * Get the repository
+   * API callback
+   * 
+   * @param array $object
+   * @param string $field_name
+   * @param WP_REST_Request $request
+   * 
+   * @return string
+   */
   public function get_repository($object, $field_name, $request) {
     return get_post_meta($object['id'], 'repository', true);
   }
 
+  /**
+   * Add tags support
+   * 
+   * @return void
+   */
   public function add_tags_support() {
     register_taxonomy_for_object_type('post_tag', 'work_projects');
   }
 
+  /**
+   * Enqueue custom styles
+   * 
+   * @return void
+   */
   public function enqueue_custom_styles() {
     wp_enqueue_style('work-projects-styles', plugin_dir_url(__FILE__) . 'style.css');
   }
 
+  /**
+   * Get the tags (Used as tech stack for each project item)
+   * API callback
+   * 
+   * @param array $object
+   * @param string $field_name
+   * @param WP_REST_Request $request
+   */
   public function get_tags($object, $field_name, $request) {
     $tags = wp_get_post_terms($object['id'], 'post_tag', array('fields' => 'names'));
     return $tags;
